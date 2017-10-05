@@ -90,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias vim="nvim"
+alias qq="exit"
 
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 export EDITOR='nvim'
@@ -127,7 +128,7 @@ bindkey -v
 bindkey jk vi-cmd-mode
 
 # autosuggest
-bindkey '<tab>' autosuggest-execute
+bindkey '^ ' autosuggest-execute
 
 # Handy binds
 bindkey "^h" beginning-of-line
