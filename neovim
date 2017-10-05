@@ -1,0 +1,38 @@
+set runtimepath+=~/.vim,~/.vim/after
+set packpath+=~/.vim
+set t_Co=256
+set background=dark
+set splitbelow
+set splitright
+set number relativenumber
+let g:loaded_python_provider = 1
+let g:loaded_python3_provider = 1
+
+call plug#begin('~/.vim/plugged')
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-syntastic/syntastic'
+"Plug 'jmcantrell/vim-virtualenv'
+Plug 'cjrh/vim-conda'
+Plug 'edkolev/tmuxline.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+call plug#end()
+
+
+au VimEnter * silent! setxkbmap -option caps:ctrl_modifier
+nmap - $
+nmap b B
+nmap w W
+cnoremap <c-j> <c-c><Esc>
+cnoremap K <UP>
+cnoremap J <DOWN>
+imap jk <Esc>
+tmap jk <Esc>
+tmap <Esc> <c-\><c-n>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
