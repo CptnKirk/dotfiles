@@ -21,8 +21,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
-
-au VimEnter * silent! setxkbmap -option caps:ctrl_modifier
 nmap - $
 nmap b B
 nmap w W

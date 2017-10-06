@@ -97,11 +97,13 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 # completion
-autoload -U compinit
+autoload -Uz compinit
 compinit
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
 # make color constants available
-autoload -U colors
+autoload -Uz colors
 colors
 
 # enable colored output form ls, etc
@@ -131,10 +133,6 @@ bindkey jk vi-cmd-mode
 bindkey '^ ' autosuggest-execute
 
 # Handy binds
-bindkey "^h" beginning-of-line
-bindkey "^l" end-of-line
-bindkey "^k" up-line #-or-history #history-search-backward
-bindkey "^j" down-line #-or-history #history-search-forward
-bindkey "K" up-line #-or-history #history-search-backward
-bindkey "J" down-line #-or-history #history-search-forward
+#bindkey "0" beginning-of-line
+bindkey -M vicmd '\-' end-of-line
 bindkey "^r" history-incremental-search-backward
