@@ -130,9 +130,11 @@ bindkey -v
 bindkey jk vi-cmd-mode
 
 # autosuggest
-bindkey '^ ' autosuggest-execute
+bindkey '^ ' autosuggest-accept
 
 # Handy binds
 #bindkey "0" beginning-of-line
 bindkey -M vicmd '\-' end-of-line
-bindkey "^r" history-incremental-search-backward
+bindkey -M vicmd w vi-forward-blank-word
+bindkey -M vicmd b vi-backward-blank-word
+bindkey '^r' history-incremental-search-backward
