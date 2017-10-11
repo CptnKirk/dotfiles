@@ -95,6 +95,7 @@ alias qq="exit"
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 export EDITOR='nvim'
 export VISUAL='nvim'
+export COLORTERM='truecolor'
 
 # completion
 autoload -Uz compinit
@@ -112,8 +113,8 @@ colors
 # history settings
 setopt hist_ignore_all_dups inc_append_history
 HISTFILE=~/.zhistory
-HISTSIZE=4096
-SAVEHIST=4096
+HISTSIZE=10000
+SAVEHIST=10000
 
 # cd movements
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
