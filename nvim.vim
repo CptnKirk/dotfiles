@@ -54,6 +54,8 @@ syntax enable
 colorscheme OceanicNext
 
 map <C-m> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 nnoremap H ^
 nnoremap L g_
 nmap b B
