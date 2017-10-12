@@ -92,7 +92,8 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias qq="exit"
 
-if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+# if [[ $TERM == xterm ]]; then TERM=screen-256color; fi
+export TERM='screen-256color'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export COLORTERM='truecolor'
