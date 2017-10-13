@@ -97,6 +97,7 @@ Plug 'neomake/neomake'
 "put after other IDEish plugins
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
+  call neomake#configure#automake('n', 200)
 
 set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h13
 
