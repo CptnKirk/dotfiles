@@ -115,7 +115,8 @@ call neomake#configure#automake('rwn')
 set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h13
 
 syntax enable
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme OceanicJim
 
 
 nnoremap ; :

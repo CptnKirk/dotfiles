@@ -8,6 +8,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim/init.vim: nvim.vim
     ~/.zshrc: zshrc
+    ~/.config/nvim/colors/OceanicJim.vim: OceanicJim.vim
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
