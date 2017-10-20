@@ -7,6 +7,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+set clipboard=unnamedplus
 set background=dark
 set splitbelow
 set splitright
@@ -18,7 +19,7 @@ set showbreak=↪
 set encoding=utf8
 set autoread
 set scrolloff=5
-set hidden
+" set hidden
 set title
 " filetype plugin on
 syntax on
@@ -38,6 +39,16 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'mhartington/oceanic-next'
 " Plug 'vim-syntastic/syntastic'
+"     " ** Don't set these if using airline
+"     " set statusline+=%#warningmsg#
+"     " set statusline+=%{SyntasticStatuslineFlag()}
+"     " set statusline+=%*
+
+"     let g:syntastic_always_populate_loc_list = 1
+"     let g:syntastic_auto_loc_list = 1
+"     let g:syntastic_check_on_open = 1
+"     let g:syntastic_check_on_wq = 0
+"     let g:syntastic_shell = "/usr/bin/zsh"
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -76,8 +87,9 @@ Plug 'ludovicchabant/vim-gutentags'
 " Plug 'c-brenn/phoenix.vim'
 " Plug 'tpope/vim-projectionist'
 Plug 'slashmili/alchemist.vim'
-  let g:alchemist_tag_map = '<C-]>'
-  let g:alchemist_tag_stack_map = '<C-[>'
+  " disabled below
+  " let g:alchemist_tag_map = '<C-]>'
+  " let g:alchemist_tag_stack_map = '<C-[>'
   let g:alchemist#elixir_erlang_src = "/home/jim/data/sources"
   let g:alchemist_tag_disable=1
 Plug 'Valloric/YouCompleteMe'
@@ -89,15 +101,16 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 " Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 
 Plug 'neomake/neomake'
-  autocmd! BufEnter,BufWritePost * Neomake
-  let g:neomake_logfile = '/tmp/neomake.log'
+  " let g:neomake_logfile = '/tmp/neomake.log'
   let g:neomake_markdown_enabled_makers = ['alex', 'markdownlint', 'proselint']
-  let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+  let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma']
 
 "put after other IDEish plugins
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
-  call neomake#configure#automake('n', 200)
+
+" start the neomake check as you go support
+call neomake#configure#automake('rwn')
 
 set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h13
 
@@ -106,6 +119,11 @@ colorscheme OceanicNext
 
 
 nnoremap ; :
+
+" fix tag navigation
+noremap ] <c-]>
+noremap <c-]> :pop<cr>
+
 " Align blocks of text and keep them selected
 vnoremap <Tab> >gv
 vnoremap <s-Tab> <gv
