@@ -4,11 +4,14 @@
 
 - clean: ['~']
 
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p ~/.oh-my-zsh]
+
 - link:
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim/init.vim: nvim.vim
     ~/.zshrc: zshrc
     ~/.config/nvim/colors/OceanicJim.vim: OceanicJim.vim
-
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    ~/.oh-my-zsh/oh-my-zsh.sh: ohmyzsh/oh-my-zsh.sh
+    ~/.oh-my-zsh/themes/maran-jim.zsh-theme: ohmyzsh/maran-jim.zsh-theme
