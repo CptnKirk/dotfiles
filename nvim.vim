@@ -73,6 +73,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'airblade/vim-gitgutter'
+set updatetime=250
+let g:gitgutter_realtime = 1
+let g:gitguter_eager = 1
+
 Plug 'airblade/vim-rooter'
   let g:rooter_patterns = ['mix.exs']
   let g:rooter_resolve_links = 1
