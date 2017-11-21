@@ -18,7 +18,7 @@ set backspace=indent,eol,start
 set showbreak=↪
 set encoding=utf8
 set autoread
-set scrolloff=5
+set scrolloff=20
 " set hidden
 set title
 " filetype plugin on
