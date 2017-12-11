@@ -62,6 +62,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
