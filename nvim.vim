@@ -36,7 +36,7 @@ Plug 'vim-airline/vim-airline'
   let g:airline_powerline_fonts = 1
   let g:airline_theme = 'oceanicnext'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'enricobacis/vim-airline-clock'
+" Plug 'enricobacis/vim-airline-clock'
 Plug 'mhartington/oceanic-next'
 " Plug 'vim-syntastic/syntastic'
 "     " ** Don't set these if using airline
@@ -73,9 +73,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'airblade/vim-gitgutter'
-set updatetime=250
-let g:gitgutter_realtime = 1
-let g:gitguter_eager = 1
+" set updatetime=10000
 
 Plug 'airblade/vim-rooter'
   let g:rooter_patterns = ['mix.exs']
