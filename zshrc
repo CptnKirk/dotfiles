@@ -63,6 +63,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+test -s "$HOME/.zshrc-local" && source "$HOME/.zshrc-local"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
