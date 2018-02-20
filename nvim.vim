@@ -60,7 +60,7 @@ Plug 'tpope/vim-fugitive'
 " let g:deoplete#enable_at_startup = 1
 
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 Plug 'scrooloose/nerdtree'
   noremap - :NERDTreeToggle<CR>
@@ -90,10 +90,10 @@ Plug 'ludovicchabant/vim-gutentags'
 " Plug 'tpope/vim-projectionist'
 Plug 'slashmili/alchemist.vim'
   " disabled below
-  " let g:alchemist_tag_map = '<C-]>'
-  " let g:alchemist_tag_stack_map = '<C-[>'
+  " let g:alchemist_tag_disable=1
+  let g:alchemist_tag_map = '<C-]>'
+  let g:alchemist_tag_stack_map = '<C-[>'
   let g:alchemist#elixir_erlang_src = "/home/jim/data/sources"
-  let g:alchemist_tag_disable=1
 Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/vim-easy-align'
 Plug 'powerman/vim-plugin-AnsiEsc'
