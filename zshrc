@@ -143,3 +143,6 @@ bindkey -M vicmd '\-' end-of-line
 bindkey -M vicmd w vi-forward-blank-word
 bindkey -M vicmd b vi-backward-blank-word
 bindkey '^r' history-incremental-search-backward
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
