@@ -73,7 +73,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'airblade/vim-gitgutter'
-" set updatetime=10000
+set updatetime=200
 
 Plug 'airblade/vim-rooter'
   let g:rooter_patterns = ['mix.exs']
@@ -140,6 +140,7 @@ nnoremap L g_
 nmap b B
 nmap w W
 nnoremap <c-n> :bnext!<CR>
+nnoremap <c-p> :bprev!<CR>
 cnoremap <c-g> <c-c><Esc>
 cnoremap K <UP>
 cnoremap J <DOWN>
