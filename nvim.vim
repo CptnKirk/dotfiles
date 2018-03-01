@@ -105,7 +105,7 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'neomake/neomake'
   " let g:neomake_logfile = '/tmp/neomake.log'
   let g:neomake_markdown_enabled_makers = ['alex', 'markdownlint', 'proselint']
-  let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma']
+  let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma', 'elixir']
 
 "put after other IDEish plugins
 Plug 'ryanoasis/vim-devicons'

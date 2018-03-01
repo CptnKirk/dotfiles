@@ -92,7 +92,7 @@ test -s "$HOME/.zshrc-local" && source "$HOME/.zshrc-local"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias vim="nvim"
+alias vim="MIX_ENV=edit nvim"
 alias qq="exit"
 
 # if [[ $TERM == xterm ]]; then TERM=screen-256color; fi
