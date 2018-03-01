@@ -72,8 +72,10 @@ Plug 'scrooloose/nerdtree'
   let g:DevIconsEnableFolderOpenClose=1
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+Plug 'wincent/terminus'
 Plug 'airblade/vim-gitgutter'
 set updatetime=200
+let g:gitgutter_terminal_reports_focus=0
 
 Plug 'airblade/vim-rooter'
   let g:rooter_patterns = ['mix.exs']
