@@ -33,7 +33,7 @@ ZSH_THEME="maran-jim"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
