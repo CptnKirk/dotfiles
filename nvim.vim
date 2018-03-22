@@ -54,6 +54,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
 
 " shugo stuff
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
