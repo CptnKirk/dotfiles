@@ -24,6 +24,7 @@ set title
 " filetype plugin on
 syntax on
 set tabstop=4 softtabstop=2 shiftwidth=2 expandtab autoindent smarttab smartindent
+set hlsearch incsearch ignorecase smartcase
 " let g:loaded_python_provider = 0
 " let g:loaded_python3_provider = 1
 
@@ -137,7 +138,8 @@ inoremap <s-Tab> <c-d>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
 
-map <Esc> :noh<cr>
+" map <Esc> :noh<cr>
+map <CR> :nohl<cr>
 nnoremap H ^
 nnoremap L g_
 nmap b B

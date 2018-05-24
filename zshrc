@@ -93,7 +93,8 @@ test -s "$HOME/.zshrc-local" && source "$HOME/.zshrc-local"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias vim="MIX_ENV=edit nvim"
-alias iex='iex --erl "+K false -kernel shell_history enabled"'
+alias iex='ERL_COMPILER_OPTIONS="native" iex --erl "+K false -kernel shell_history enabled"'
+alias mix='ERL_COMPILER_OPTIONS="native" mix'
 alias qq="exit"
 
 # if [[ $TERM == xterm ]]; then TERM=screen-256color; fi
