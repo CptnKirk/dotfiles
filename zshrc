@@ -65,6 +65,9 @@ source $ZSH/oh-my-zsh.sh
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 test -s "$HOME/.zshrc-local" && source "$HOME/.zshrc-local"
 
+zmodload -i zsh/stat
+disable stat
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -148,3 +151,6 @@ bindkey '^r' history-incremental-search-backward
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+source activate deeplearning2.7
+. /home/jim/data/erl/21.0/activate

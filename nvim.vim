@@ -7,6 +7,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+let mapleader=" "
 set clipboard=unnamedplus
 set background=dark
 set splitbelow
@@ -16,21 +17,39 @@ set backspace=indent,eol,start
 " set autochdir
 " set nowrap
 set showbreak=↪
-set encoding=utf8
+set encoding=utf-8
 set autoread
 set scrolloff=20
 " set hidden
 set title
 " filetype plugin on
+let python_highlight_all=1
 syntax on
 set tabstop=4 softtabstop=2 shiftwidth=2 expandtab autoindent smarttab smartindent
 set hlsearch incsearch ignorecase smartcase
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
 " let g:loaded_python_provider = 0
 " let g:loaded_python3_provider = 1
 
 let g:gutentags_cache_dir = '~/.tags_cache'
 
 call plug#begin('~/.vim/plugged')
+Plug 'rust-lang/rust.vim'
+Plug 'autozimu/LanguageClient-neovim'
+Plug 'rust-lang-nursery/rls'
+
+Plug 'vim-syntastic/syntastic'
+Plug 'nvie/vim-flake8'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
@@ -98,7 +117,11 @@ Plug 'slashmili/alchemist.vim'
   let g:alchemist_tag_map = '<C-]>'
   let g:alchemist_tag_stack_map = '<C-[>'
   let g:alchemist#elixir_erlang_src = "/home/jim/data/sources"
+
 Plug 'Valloric/YouCompleteMe'
+  let g:ycm_autoclose_preview_window_after_completion=1
+  map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR><Paste>
+
 Plug 'junegunn/vim-easy-align'
 Plug 'powerman/vim-plugin-AnsiEsc'
 
@@ -108,12 +131,46 @@ Plug 'elixir-editors/vim-elixir'
 
 Plug 'neomake/neomake'
   " let g:neomake_logfile = '/tmp/neomake.log'
+  "Linting with neomake
+  let g:neomake_sbt_maker = {
+      \ 'exe': 'sbt',
+      \ 'args': ['-Dsbt.log.noformat=true', 'compile'],
+      \ 'append_file': 0,
+      \ 'auto_enabled': 1,
+      \ 'output_stream': 'stdout',
+      \ 'errorformat':
+          \ '%E[%trror]\ %f:%l:\ %m,' .
+            \ '%-Z[error]\ %p^,' .
+            \ '%-C%.%#,' .
+            \ '%-G%.%#'
+     \ }
   let g:neomake_markdown_enabled_makers = ['alex', 'markdownlint', 'proselint']
   let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma', 'elixir']
+  let g:neomake_scala_enabled_makers = ['sbt']
+  " let g:neomake_enabled_makers = ['sbt']
+  " let g:neomake_verbose=3
+
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+
+"start scala support
+" autocmd InsertLeave,TextChanged * update | Neomake! sbt
+
+Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#sources={}
+  let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
+  let g:deoplete#omni#input_patterns={}
+  let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
+
 
 "put after other IDEish plugins
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
 
 " start the neomake check as you go support
 call neomake#configure#automake('rwn')
