@@ -152,5 +152,5 @@ bindkey '^r' history-incremental-search-backward
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-source activate deeplearning2.7
+source activate python3
 . /home/jim/data/erl/21.0/activate

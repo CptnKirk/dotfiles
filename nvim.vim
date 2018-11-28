@@ -43,6 +43,28 @@ au BufNewFile,BufRead *.py
 let g:gutentags_cache_dir = '~/.tags_cache'
 
 call plug#begin('~/.vim/plugged')
+
+"start scala support
+" autocmd InsertLeave,TextChanged * update | Neomake! sbt
+Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'cloudhead/neovim-fuzzy'
+Plug 'neomake/neomake'
+"Code completion with Deoplete - enabled by ensime
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources={} 
+let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips'] 
+let g:deoplete#omni#input_patterns={} 
+let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#sources={}
+  let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
+  let g:deoplete#omni#input_patterns={}
+  let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
+
+"start rust support
 Plug 'rust-lang/rust.vim'
 Plug 'autozimu/LanguageClient-neovim'
 Plug 'rust-lang-nursery/rls'
@@ -152,17 +174,6 @@ Plug 'neomake/neomake'
 
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-
-"start scala support
-" autocmd InsertLeave,TextChanged * update | Neomake! sbt
-
-Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#sources={}
-  let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
-  let g:deoplete#omni#input_patterns={}
-  let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
 
 
 "put after other IDEish plugins
