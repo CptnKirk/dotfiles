@@ -184,6 +184,7 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 
 " start the neomake check as you go support
+autocmd BufWritePost *.scala silent :EnTypeCheck
 call neomake#configure#automake('rwn')
 
 set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h13
