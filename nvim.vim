@@ -210,8 +210,8 @@ inoremap <c-k> <up>
 map <CR> :nohl<cr>
 nnoremap H ^
 nnoremap L g_
-nmap b B
-nmap w W
+" nmap b B
+" nmap w W
 nnoremap <c-n> :bnext!<CR>
 nnoremap <c-p> :bprev!<CR>
 cnoremap <c-g> <c-c><Esc>
